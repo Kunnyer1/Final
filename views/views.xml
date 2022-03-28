@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <menuitem id="loyalty_menu1" name="Loyalty" sequence="235" groups="" web_icon="">
+            <menuitem name="Management" id="loyalty_menu2" sequence="50">
+                <menuitem name="Programs" id="loyalty_menu3" action="action_loyalty" sequence="1"/>
+                <menuitem name="Contacts" id="contacts" action="action_customer_management" sequence="2"/>
+            </menuitem>
+
+            <menuitem id="loyalty_menu4" name="History" sequence="50" action="action_history"/>
+
+            <menuitem id="config" name="Configuration" sequence="53">
+                <menuitem name="Setting" id="setting" action="action_config" sequence="1"/>
+                <menuitem name="Partner Level" id="level" action="action_level"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

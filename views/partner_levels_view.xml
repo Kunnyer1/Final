@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="level_form_view" model="ir.ui.view">
+            <field name="name">partner.level.form.view</field>
+            <field name="model">partner.level</field>
+            <field name="arch" type="xml">
+                <form string="Level">
+                    <sheet>
+                        <div class="oe_title">
+<!--                            <label for="name"/>-->
+                            <h1>
+                                <field name="name" placeholder="Level Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="Configuration">
+                                <field name="loyalty_point"/>
+                            </group>
+                            <group string="Description">
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="level_tree_view" model="ir.ui.view">
+            <field name="name">partner.level.tree.view</field>
+            <field name="model">partner.level</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Level">
+                    <field name="name"/>
+                    <field name="loyalty_point"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_level" model="ir.actions.act_window">
+            <field name="name">Partner Level</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">partner.level</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <menuitem name="Level Menu" id="level_menu" parent="loyalty_menu" action="action_level" sequence="2"/>
+
+    </data>
+</odoo>

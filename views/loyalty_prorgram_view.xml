@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="program_form_view" model="ir.ui.view">
+            <field name="name">loyalty.program.form.view</field>
+            <field name="model">loyalty.program</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name of the promotion"/>
+                            </h1>
+                        </div>
+                        <group name="information">
+                            <group>
+                                <field name="point"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="program_tree_view" model="ir.ui.view">
+            <field name="name">program.tree.view</field>
+            <field name="model">loyalty.program</field>
+            <field name="arch" type="xml">
+                <tree string="Loyalty">
+                    <field name="name"/>
+                    <field name="point"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_loyalty" model="ir.actions.act_window">
+            <field name="name">Loyalty Program</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.program</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <menuitem name="Loyalty" id="loyalty_menu" action="action_loyalty"/>
+        <!--                  web_icon="./infomation/static/src/Ami.gif"-->
+
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_form_view" model="ir.ui.view">
+            <field name="name">res.config.setting.form.view</field>
+            <field name="model">config.setting</field>
+            <field name="arch" type="xml">
+                <form string="Config Setting">
+                    <sheet>
+                        <div class="col-12 col-lg-6 o_setting_box" id="email_check">
+                            <div class="o_setting_left_pane">
+                                <field name="loyalty_email_notify"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="loyalty_email_notify" string="Email Notify"/>
+                                <div class="text-muted">
+                                   Disabled loyalty email notification
+                                </div>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="action_config" model="ir.actions.act_window">
+            <field name="name">Config</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.program</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <menuitem name="Setting Config" id="setting_menu" parent="loyalty_menu" action="action_config"
+        groups="base.group_system" sequence="6"/>
+
+    </data>
+</odoo>
